@@ -3,6 +3,14 @@ baseurl: "" # the subpath of your site, e.g. /blog
 title: "" # the name of your site, e.g. ACME Corp.
 
 collections:
-  c:
+  class_collection:
     permalink: /c/:path/
     output: true
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "class_collection"
+    values:
+      layout: "class_detail"

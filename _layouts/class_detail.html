@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+  </head>
+  <body>
+
+		<h1>{{ page.title }}</h1>
+
+		<p>{{ page.dt | date: "%A, %b %e, %Y" }}</p>
+		
+		<p>{% if page.start %}{{ page.start }}{% endif %}{% if page.end %}–{{ page.end }}{% endif %}</p>
+
+		{{ content }}
+		
+		{% if page.link %}
+			<p><a href="{{ page.link}}">Sign up</a></p>
+		{% endif %}
+
+  </body>
+</html>
