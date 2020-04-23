@@ -11,12 +11,12 @@
   </head>
   <body>
 
-
+	<a href="cal">Class list</a>
 
 	<dl class="calendar">
 
 	{% assign classes = site.class_collection | sort: 'dt' %}
-	{% for class in classes reversed %}
+	{% for class in classes reversed limit:10 %}
 
 		<article class="static_class_listing">
 			<a href="{{ class.url }}">

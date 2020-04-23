@@ -4,20 +4,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
+
+	<link rel="stylesheet" href="http://knowledgecommonsdc.org/static/css/style.css">
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700,200italic,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+
   </head>
   <body>
 
-		<h1>{{ page.title }}</h1>
 
-		<p>{{ page.dt | date: "%A, %b %e, %Y" }}</p>
-		
-		<p>{% if page.start %}{{ page.start }}{% endif %}{% if page.end %}–{{ page.end }}{% endif %}</p>
+		<a href="/cal">Class List</a>
 
-		{{ content }}
-		
-		{% if page.link %}
-			<p><a href="{{ page.link}}">Sign up</a></p>
-		{% endif %}
+
+
+
+		<div id="hed">
+			<h1>{{ page.title }}</h1>
+		</div>
+
+		<div id="main">
+
+			<p class="meta">
+
+				<i class="ss-icon">date</i>
+				{{ page.dt | date: "%A, %b %e, %Y" }}
+
+				<i class="ss-icon icon_push_right">time</i>
+				{% if page.start %}{{ page.start }}{% endif %}{% if page.end %}–{{ page.end }}{% endif %}
+
+			</p>
+
+			{{ content }}
+			
+			{% if page.link %}
+				<p><a href="{{ page.link}}" id="submit_button">Sign up</a></p>
+			{% endif %}
+
+		</div>
+
 
   </body>
 </html>
